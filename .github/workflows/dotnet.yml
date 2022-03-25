@@ -18,10 +18,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./CMP186-WorkshopGitHubAction.sln
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
-    - name: Publish
-      run: dotnet publish New Folder/CMP186-WorkshopGitHubAction-Src/CMP186-WorkshopGitHubAction/CMP186-WorkshopGitHubAction.csproj
+      run: dotnet test ./CMP186-WorkshopGitHubAction.sln --no-build --verbosity normal
